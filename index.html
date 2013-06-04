@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<title>kaxi (a great and minimalist localStorage library)</title>
+	<meta charset="UTF-8"/>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300,400|Inconsolata:400' rel='stylesheet'>
+  <link href='http://weloveiconfonts.com/api/?family=entypo' rel='stylesheet'>
+	<link rel="stylesheet" href="style.css">
+
+<body>
+  
+  <header>
+    <a id="download" href="http://miduga.es/projects/kaxi/kaxi.min.js"><span class="entypo-install"></span>Descargar kaxi<span id="version">min. 2kb</span></a>
+    <h1>Kaxi</h1>
+    <span>simple but powerful localStorage lib</span>
+  </header>
+	
+  <h2>¿Qué es kaxi?</h2>
+  <p>Kaxi está basado en el trabajo de <a target="_blank" href="https://github.com/pamelafox">Pamela Fox</a> y su <a target="_blank" href="https://github.com/pamelafox/lscache">lscache</a>. Reescrito en CoffeeScript, más simple y con más comentarios. La idea de la librería era emular el funcionamiento de memcache pero usando las bondades de una de las mayores novedades de HTML5: <a target="_blank" href="http://diveintohtml5.info/storage.html">localStorage.</a></p>
+  
+  <p>A grandes rasgos, y para evitar dormir a nadie, <strong>localStorage nos permite guardar cualquier tipo de información en el navegador del cliente</strong>, hasta un máximo de 5MB. Y por cualquiera es... cualquiera. Desde imágenes en Base64 hasta objetos JSON, strings, números... las posibilidades son infinitas.</p>
+  
+  <p>Y eso <strong>en menos de 2KB</strong> (800 bytes comprimido con GZIP).</p>
+  
+  <h2>Funcionamiento</h2>
+  <p>Kaxi es compatible con todos los navegadores modernos que <a target="_blank" href="http://caniuse.com/#feat=namevalue-storage">soporten localStorage.</a> Si intentas usar kaxi y el navegador no lo soporta, simplemente se ignorará.</p>
+  
+  <p>Kaxi ha sido escrito totalmente en Coffescript por lo que es totalmente compatible tanto como CoffeeScript y Javascript.</p>
+
+  <h3>Métodos de kaxi</h3>
+	<pre><code data-language="coffeescript">
+  # guarda en la posición 'key' el string durante 60 minutos
+  kaxi.set 'key', "valor string a guardar", 60
+  
+  # guarda en la posición 'objeto' el objeto durante 3 horas
+  kaxi.set 'objeto', { 'result' : true }, 180
+  
+  # guarda en la posición 'imagen', la imagen en base64 durante 5 horas
+  kaxi.set 'imagen', "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", 300
+  
+  # recupera el value de 'objeto'y lo guarda en objectFromKaxi
+  objectFromKaxi = kaxi.get 'object'
+  
+  # borra el contenido que hay en kaxi en posición 'key'
+  kaxi.remove 'key'
+  
+  # borra todo el contenido del localStorage manejado por kaxi
+  kaxi.flush()
+  </code></pre>
+  
+  <h2>Ejemplo</h2>
+  
+  <div id="primera_vez">
+  <p>Es la primera vez que entras en la página, ¿verdad? Pues recarga la página y verás en este bloque algunas cosas que he guardado en localStorage usando kaxi durante 10 minutos. Si <a id="recargar_pagina" href="#">recargas la página</a> verás en este bloque el resultado.</p>
+    
+  <pre><code data-language="coffeescript">
+  # Guardando un string durante 10 minutos
+  kaxi.set 'example1', "Hay un panda ninja suelto en mi casa", 10
+  # Guardando un objeto durante 10 minutos
+  kaxi.set 'example2', { animal: 'Panda' }, 10
+  # Guardando una imagen en base64 durante 10 minutos
+  kaxi.set 'example3', pandaNinja, 10
+  </code></pre>
+  
+  </div>
+  
+  <div id="usando_kaxi">
+  <p>Ya habías entrado en la web antes, ¿verdad? Lo sé porque guardamos algunas cosas en tu localStorage usando kaxi. Y esto es lo que hay guardado:</p>
+  
+  <h3>Mostrando cache1 (un string guardado en la key 'example1':</h3>
+  
+  <pre><code data-language="coffeescript">
+  # recupera el string que guardamos en 'example1'
+  cache1 = kaxi.get 'example1'
+  document.getElementById( 'cache1_result' ).innerHTML = cache1;
+  </code></pre>
+  
+  <p id="cache1_result"></p>
+  
+  <h3>Mostrando cache2 (un objeto guardado en la key 'example2':</h3>
+
+  <pre><code data-language="coffeescript">
+  # recupera el objeto que guardamos en 'example2'
+  cache2 = kaxi.get 'example2'
+  stringFromJSON = JSON.stringify( cache2 );
+  document.getElementById( 'cache2_result' ).innerHTML = stringFromJSON;
+  </code></pre>
+  
+  <p id="cache2_result"></p>
+  
+  <h3>Mostrando cache3 (una imagen en Base64 guardada en la key 'example3':</h3>
+
+  <pre><code data-language="coffeescript">
+  # recupera la imagen que guardamos en 'example3'
+  cache3 = kaxi.get 'example3'
+  document.getElementById( 'cache3_result' ).src = cache3;
+  </code></pre>
+  
+  <p><img id="cache3_result" src="" /></p>
+  </div>
+
+	<script src="kaxi.js"></script>
+  <script src="rainbow-custom.min.js"></script>
+	<script src="function.js"></script>

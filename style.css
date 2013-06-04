@@ -1,0 +1,221 @@
+/* serious reset */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,p,blockquote,a,code,em,img,small,strong,sub,sup,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figure,figcaption,footer,header,menu,nav,section,summary,time,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote{quotes:none}blockquote:before,blockquote:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+.none {
+  display: none;
+}
+
+html, body {
+  width: 550px;
+  display: block;
+  margin: 40px auto 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-size: 15px;
+  margin-bottom: 25px;
+  line-height: 160%;
+  font-weight: 300;
+  color: #333;
+}
+
+a {
+  color: #09f;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+a:hover {
+  color: #333;
+  text-shadow: 1px 1px 0px #ddd, 2px 2px 0px #eee;
+}
+
+strong {
+  font-weight: 400;
+  color: #444;
+}
+
+.dot {
+  background: #000;
+  float: left;
+  height: 5px;
+  margin-left: 4px;
+  width: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+h1 {
+  font-size: 130px;
+  display: block;
+  color: #333;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 2px 2px 0px #ccc, 3px 3px 0px #ddd;
+  letter-spacing: -20px;
+  display: inline;
+}
+
+header {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+header span {
+  color: #555;
+  margin-left: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  display: block;
+  color: #555;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab', serif;
+}
+
+h3 {
+  font-size: 16px;
+  display: block;
+  color: #666;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Slab', serif;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  display: block;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  float: left;
+}
+
+#download {
+  right: 58px;
+  top: 24px;
+  position: absolute;
+  vertical-align: top;
+  line-height: 28px;
+  border-radius: 4px;
+  box-shadow: #439230 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 15px 8px;
+  margin: .5em .5em .5em 0;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  -webkit-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  -ms-transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  transition: 0.1s linear;
+
+  background: #82cc5d;
+  background: -moz-linear-gradient(top,  #82cc5d 0%, #53b73c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82cc5d), color-stop(100%,#53b73c));
+  background: -webkit-linear-gradient(top,  #82cc5d 0%,#53b73c 100%);
+  background: -ms-linear-gradient(top,  #82cc5d 0%,#53b73c 100%);
+  background: linear-gradient(to bottom,  #82cc5d 0%,#53b73c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82cc5d', endColorstr='#53b73c',GradientType=0 );
+  border: 1px solid #429E34;
+}
+
+#download:hover {
+  box-shadow: #439230 0 6px 0px, rgba(0, 0, 0, 0.3) 0 10px 3px;
+
+  background: #99cc80;
+  background: -moz-linear-gradient(top,  #99cc80 0%, #53b73c 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#99cc80), color-stop(100%,#53b73c));
+  background: -webkit-linear-gradient(top,  #99cc80 0%,#53b73c 100%);
+  background: -ms-linear-gradient(top,  #99cc80 0%,#53b73c 100%);
+  background: linear-gradient(to bottom,  #99cc80 0%,#53b73c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99cc80', endColorstr='#53b73c',GradientType=0 );
+}
+
+#download:active {
+  box-shadow: #439230 0 3px 0, rgba(0, 0, 0, 0.2) 0 6px 3px;
+
+  position: relative;
+  top: 5px;
+}
+
+#download span {
+  margin-left: 5px;
+  color: #f0f0f0;
+  font-weight: normal;
+  font-size: 12px;
+  text-shadow: 0 none;
+}
+
+/**
+ * Blackboard theme
+ *
+ * Adapted from Domenico Carbotta's TextMate theme of the same name
+ *
+ * @author Domenico Carbotta
+ * @author Craig Campbell
+ * @version 1.0.2
+ */
+pre {
+    background: #272822;
+    word-wrap: break-word;
+    margin: 0px 0px 30px 0px;
+    padding: 5px;
+    color: #f0f0f0;
+    font-size: 14px;
+}
+
+pre, code {
+    font-family: 'Inconsolata', courier, monospace;
+}
+
+pre .comment {
+    color: #727272;
+}
+
+pre .constant {
+    color: #D8FA3C;
+}
+
+pre .storage {
+    color: #FBDE2D;
+}
+
+pre .string, pre .comment.docstring {
+    color: #61CE3C;
+}
+
+pre .string.regexp, pre .support.tag.script, pre .support.tag.style {
+    color: #fff;
+}
+
+pre .keyword, pre .selector {
+    color: #FBDE2D;
+}
+
+pre .inherited-class {
+    font-style: italic;
+}
+
+pre .entity {
+    color: #FF6400;
+}
+
+pre .support, *[data-language="c"] .function.call {
+    color: #8DA6CE;
+}
+
+pre .variable.global, pre .variable.class, pre .variable.instance {
+    color: #FF6400;
+}
